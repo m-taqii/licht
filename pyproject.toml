@@ -7,7 +7,14 @@ authors = [
     { name = "m-taqii", email = "busy.digital.master@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "openai-agents>=0.22.3",
+    "psycopg[binary]>=3.3.6",
+    "pydantic-settings>=2.15.0",
+    "resend>=2.47.0",
+    "sqlalchemy>=2.0.54",
+]
 
 [project.scripts]
 licht = "licht:main"
