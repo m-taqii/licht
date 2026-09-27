@@ -4,6 +4,8 @@ from typing import Optional
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+
+    dev_mode: bool = False
     
     # Email Settings
     resend_api_key: str
@@ -13,6 +15,8 @@ class Settings(BaseSettings):
     llm_model: Optional[str] = None
     llm_api_key: Optional[str] = None
     llm_base_url: Optional[str] = None
+
+    db_url: str = "sqlite:///licht.db"
 
 @lru_cache()
 def get_settings() -> Settings:
